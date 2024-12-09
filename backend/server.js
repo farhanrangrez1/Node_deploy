@@ -17,7 +17,7 @@ aap.get("/",(req,res)=>{
 aap.use(express.json())
 aap.use(express.urlencoded({express:true}))
 
-
+// ye code deploy ment ka hai 
 aap.use("/uploads", express.static(path.join(__dirname, "uploads"))); 
 // Router Url
 aap.use("/api/user",require("./Router/userRouter"))

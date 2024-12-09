@@ -9,10 +9,10 @@ const bannersModel =new mongoose.Schema({
         type: String,
         required : [true,"Please add Images"]
     },
-    isAdmin:{
+    isBanners:{
         type:Boolean,
         required:true,
-        default:false
+        default:true
     }
 },{
     timeseries:true
