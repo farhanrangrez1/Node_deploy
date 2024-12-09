@@ -3,7 +3,8 @@ const asynchandler = require("express-async-handler");
 
 const bannerss = asynchandler(async (req, res) => {
   const { name } = req.body;
-  const image = req.file?.path;
+  // const image = req.file?.path;
+  const image = `${req.protocol}://${req.get("host")}/uploads/${req.file?.filename}`;
 
   if (!image || !name) {
     throw new Error("Please fill all details");
