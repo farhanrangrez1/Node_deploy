@@ -3,6 +3,7 @@ const express =require("express")
 require("dotenv").config()
 const {colors}=require("colors")
 const { DBconnect } = require("./config/db_config")
+const path = require("path");
 
 const aap = express()
 const PORT = process.env.PORT || 5000
@@ -16,6 +17,8 @@ aap.get("/",(req,res)=>{
 aap.use(express.json())
 aap.use(express.urlencoded({express:true}))
 
+
+aap.use("/uploads", express.static(path.join(__dirname, "uploads"))); 
 // Router Url
 aap.use("/api/user",require("./Router/userRouter"))
 aap.use("/api/banner",require("./Router/bannersRouter"))
