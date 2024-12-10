@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.post("/banners",protect,upload.single("image"),bannerss);
 router.get("/bannersAll",protect,bannerssAll);
-router.put("/:id",bannerssUpdate)
-router.delete("/:id",bannerssDelete)
+router.put("/:id",protect,bannerssUpdate)
+router.delete("/:id",protect,bannerssDelete)
 
 
 module.exports = router;
