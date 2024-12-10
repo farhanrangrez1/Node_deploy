@@ -1,9 +1,6 @@
 const Brand = require("../Model/brandModel");
 const asynchandler = require("express-async-handler");
 
-
-
-
 const brandCreate =asynchandler(async (req, res) => {
     const { name } = req.body;
     const image = `${req.protocol}://${req.get("host")}/uploads/${req.file?.filename}`;
