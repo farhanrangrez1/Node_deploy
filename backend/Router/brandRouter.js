@@ -6,7 +6,7 @@ const { brandCreate, brandAll, brandDelete, brandUpdate } = require("../Controll
 const router = express.Router()
 
 router.post("/brandCreate",protect,upload.single("image"),brandCreate);
-router.get("/bannersAll",protect,brandAll);
+router.get("/brandAll",protect,brandAll);
 router.delete("/:id",protect,brandDelete)
 router.put("/:id", upload.single("image"),brandUpdate);
 
