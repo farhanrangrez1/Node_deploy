@@ -3,11 +3,11 @@ const {protect} =require("../Middlewar/authMiddlewares")
 const upload = require("../Middlewar/Multer"); 
 const { brandCreate, brandAll, brandDelete, brandUpdate } = require("../Controller/brandController");
 
-const router = express.Router()
+const brand = express.Router()
 
-router.post("/brandCreate",protect,upload.single("image"),brandCreate);
-router.get("/brandAll",protect,brandAll);
-router.delete("/:id",protect,brandDelete)
-router.put("/:id", upload.single("image"),brandUpdate);
+brand.post("/brandCreate",protect,upload.single("image"),brandCreate);
+brand.get("/brandAll",protect,brandAll);
+brand.delete("/:id",protect,brandDelete)
+brand.put("/:id", upload.single("image"),brandUpdate);
 
-module.exports = router
+module.exports = brand
