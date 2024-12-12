@@ -83,4 +83,26 @@ const userLogin =asynchandler(async(req,res)=>{
     res.send("Login Router")
 })
 
-module.exports = {userRegister,userLogin}
+
+// ye code chat ka hai
+const userAll = async (req, res) => {
+    const userAll = await User.find();
+    if (userAll.length === 0) {
+        res.status(404).json({ message: "No User Found" });
+        return;
+    }
+    res.status(200).json(userAll);
+};
+
+const userSingle = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: "user Not Found" });
+        }
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(400).json({ message: "Invalid user ID", error });
+    }
+};
+module.exports = {userRegister,userLogin,userSingle,userAll}

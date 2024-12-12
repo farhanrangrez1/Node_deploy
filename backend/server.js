@@ -26,6 +26,7 @@ aap.use("/api/banner",require("./Router/bannersRouter"))
 aap.use("/api/category",require("./Router/categoryRouter"))
 aap.use("/api/subCtegory",require("./Router/subCategoryRouter"))
 aap.use("/api/brand",require("./Router/brandRouter"))
+aap.use("/api/products",require("./Router/productsRouter"))
 
 aap.listen(PORT,()=>{
     console.log(`Server is running PORT ${PORT}`);
